@@ -53,6 +53,17 @@ public class ShoppingCart {
   setOrderTotal(dblTotal);
  }
 
+ public void updateCartItem(int index, int quantity){
+  CartItem cartItem;
+          try {
+           cartItem = cartItems.get(index);
+           cartItem.setQuantity(quantity);
+          }catch(IndexOutOfBoundsException ioobe){
+           System.out.println(ioobe.getMessage());
+
+          }
+ }
+
  public void deleteCartItem(int index) {
 	 try {
 	 cartItems.remove(index);
